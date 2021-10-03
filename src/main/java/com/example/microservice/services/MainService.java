@@ -14,7 +14,7 @@ public class MainService {
     }
 
     public Order GetOrderInfo(int id){
-        String url = "http://localhost:8085/orders/" + id;
+        String url = "http://subscription-service/orders/" + id;
         return this.restTemplate.getForObject(url, Order.class);
     }
 }
