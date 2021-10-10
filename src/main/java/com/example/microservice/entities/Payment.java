@@ -1,19 +1,22 @@
 package com.example.microservice.entities;
 
-public class Payment {
+import javax.persistence.*;
 
+@Entity
+@Table(name="payments")
+public class Payment {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int Id;
-    private Order order;
+    private int orderId;
     private boolean paid;
 
-    public Payment(Order order, int Id, boolean paid) {
-        this.Id = Id;
-        this.order = order;
-        this.paid = paid;
+    public Payment() {
     }
 
-    public boolean checkPay(double paidAmount){
-        return paidAmount == order.getAmount();
+    public Payment(int orderId, boolean paid) {
+        this.orderId = orderId;
+        this.paid = paid;
     }
 
     public int getId() {
@@ -24,12 +27,12 @@ public class Payment {
         Id = id;
     }
 
-    public Order getOrder() {
-        return order;
+    public int getOrder() {
+        return orderId;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrder(int orderId) {
+        this.orderId = orderId;
     }
 
     public boolean isPaid() {

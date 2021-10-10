@@ -10,10 +10,10 @@ public class Order {
     private int amount;
     private int userId;
     private boolean valid;
-    private List<String> subscriptionType;
+    private String subscriptionType;
 
     public Order(){}
-    public Order(int id, int amount, int userId, boolean valid, List<String> subscriptionType) {
+    public Order(int id, int amount, int userId, boolean valid, String subscriptionType) {
         Id = id;
         this.amount = amount;
         this.userId = userId;
@@ -53,11 +53,11 @@ public class Order {
         this.userId = userId;
     }
 
-    public List<String> getSubscriptionType() {
+    public String getSubscriptionType() {
         return subscriptionType;
     }
 
-    public void setSubscriptionType(List<String> subscriptionType) {
+    public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
     }
 }
