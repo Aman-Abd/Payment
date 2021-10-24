@@ -20,7 +20,6 @@ public class MainController {
 
     @GetMapping("{id}")
     public Order getPaymentInfo (@PathVariable String id){
-        MainService mainService = new MainService(new RestTemplateBuilder());
         return mainService.GetOrderInfo(Integer.parseInt(id));
     }
 

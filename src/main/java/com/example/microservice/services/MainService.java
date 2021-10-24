@@ -1,20 +1,21 @@
 package com.example.microservice.services;
 
 import com.example.microservice.entities.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class MainService {
-    private final RestTemplate restTemplate;
+    @Autowired
+    private  RestTemplate restTemplate;
 
-    public MainService(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplate = restTemplateBuilder.build();
+    public MainService() {
     }
 
     public Order GetOrderInfo(int id){
-        String url = "http://localhost:8085/orders/" + id;
+        String url = "http://subscription-service/orders/" + id;
         return this.restTemplate.getForObject(url, Order.class);
     }
 }
