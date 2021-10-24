@@ -1,9 +1,15 @@
 package com.example.microservice.entities;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
+@Getter
+@Setter
 public class Order {
 
     private int Id;
@@ -18,46 +24,6 @@ public class Order {
         this.amount = amount;
         this.userId = userId;
         this.valid = valid;
-        this.subscriptionType = subscriptionType;
-    }
-
-    public boolean isValid() {
-        return valid;
-    }
-
-    public void setValid(boolean valid) {
-        this.valid = valid;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getSubscriptionType() {
-        return subscriptionType;
-    }
-
-    public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
     }
 }

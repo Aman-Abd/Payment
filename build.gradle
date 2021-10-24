@@ -4,6 +4,7 @@ buildscript {
 	}
 	dependencies {
 		classpath "mysql:mysql-connector-java:6.0.6"
+
 	}
 }
 
@@ -28,10 +29,15 @@ ext {
 apply plugin: "io.spring.dependency-management"
 
 dependencies {
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-data-rest', version: '1.5.12'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-webflux-ui', version: '1.5.12'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.5.12'
+	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation "mysql:mysql-connector-java:8.0.13"
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.projectlombok:lombok:1.18.16'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
@@ -45,3 +51,4 @@ dependencyManagement {
 test {
 	useJUnitPlatform()
 }
+
